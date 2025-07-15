@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" type="image/png" href="Wine-removebg-preview.png" />
+  <meta charset="UTF-8" />
+  <title>DIY Bar - Cocktail Maker</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="navbar">
+    <div class="logo">
+      <a href="index.html">Cocktail Maker</a>
+    </div>
+
+    <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+
+    <div class="nav-links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="diy_bar.html">DIY Bar</a>
+      <a href="about.html">About Us</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </div>
+
+  <!-- DIY Bar Section -->
+  <section id="diy_bar">
+    <div class="container">
+      <h2>DIY Bar</h2>
+      <p>Can't go to a bar right now? No problem just tell us what you have and we'll show you what you can make.</p>
+    </div>
+    <div id="checklist-container"></div>
+  </section>
+
+  <script>
+    function toggleMenu() {
+      const navLinks = document.getElementById("navLinks");
+      const hamburger = document.getElementById("hamburger");
+
+      navLinks.classList.toggle("active");
+      hamburger.classList.toggle("open");
+    }
+
+    const data = [
+      {
+        name: "Spirits",
+        children: [
+          {
+            name: "Vodka",
+            children: [
+              { name: "Flavored Vodka" },
+              { name: "Plain Vodka" }
+            ]
+          },
+          {
+            name: "Whiskey",
+            children: [
+              { name: "Bourbon" },
+              { name: "Scotch" }
+            ]
+          }
+        ]
+      },
+      {
+        name: "Mixers",
+        children: [
+          { name: "Soda" },
+          { name: "Juices" }
+        ]
+      }
+    ];
+
+    function createNode(node) {
+      const container = document.createElement('div');
+      container.style.marginLeft = '20px';
+
+      const checkbox = document.createElement('input');
+      checkbox.type = 'checkbox';
+      checkbox.id = node.name;
+
+      const label = document.createElement('label');
+      label.htmlFor = node.name;
+      label.textContent = node.name;
+
+      container.appendChild(checkbox);
+      container.appendChild(label);
+
+      if (node.children && node.children.length) {
+        const childrenContainer = document.createElement('div');
+        childrenContainer.style.display = 'none'; // hidden by default
+        childrenContainer.style.marginLeft = '20px';
+
+        node.children.forEach(child => {
+          childrenContainer.appendChild(createNode(child));
+        });
+
+        container.appendChild(childrenContainer);
+
+        checkbox.addEventListener('change', () => {
+          childrenContainer.style.display = checkbox.checked ? 'block' : 'none';
+        });
+      }
+
+      return container;
+    }
+
+    const root = document.getElementById('checklist-container');
+    data.forEach(item => {
+      root.appendChild(createNode(item));
+    });
+  </script>
+</body>
+
+</html>

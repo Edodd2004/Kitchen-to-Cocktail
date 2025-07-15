@@ -1,0 +1,226 @@
+form {
+  width: 100vw; /* or 100% if container spans full width */
+  margin: 0;
+  padding: 0; /* adjust if needed */
+  background-color: your-color;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: rgba(0, 0, 0, 0.65);
+  z-index: -1;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background-color: #000; /* fallback if image missing */
+  color: white;
+  position: relative;
+}
+
+.navbar {
+  background-color: #2c1e38;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  top: 0;
+  overflow: visible;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 1000000;
+}
+
+.navbar .logo a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.logo img {
+  height: 40px;
+  width: auto;
+  display: block;
+}
+
+.navbar .nav-links {
+  display: flex;
+  gap: 10px;
+}
+
+.navbar .nav-links a {
+  color: #ffffff;
+  text-decoration: none;
+  padding: 10px 15px;
+  border: 2px solid transparent;
+  border-radius: 4px;
+  transition: background 0.25s, border 0.25s;
+  font-size: clamp(1rem, 2vw, 1.125rem);
+}
+
+.navbar a:hover {
+  border: 2px solid white;
+  border-radius: 4px;
+  padding: 10px 15px;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.hamburger div {
+  width: 15px;
+  height: 1px;
+  background-color: white;
+  margin: 2px 0;
+  transition: all 0.3s ease;
+  transform-origin: center;
+}
+
+/* Responsive layout for smaller screens */
+@media (max-width: 600px) {
+  .navbar .nav-links {
+    position: fixed;
+    top: 42.5px;
+    left: -100%;
+    width: 100vw;
+    height: 285px;
+    background-color: #2c1e38;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: left 0.3s ease;
+    z-index: 11000;
+  }
+
+  .navbar .nav-links.active {
+    left: 0;
+  }
+
+  .navbar .nav-links a {
+    font-size: 24px;
+    padding: 15px;
+    color: white;
+  }
+
+  .hamburger {
+    display: flex;
+    z-index: 1101;
+  }
+}
+
+/* Hamburger active (X) state */
+.hamburger.open div:nth-child(1) {
+  transform: rotate(45deg) translate(3.5px, 3.5px);
+}
+
+.hamburger.open div:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.open div:nth-child(3) {
+  transform: rotate(-45deg) translate(3.5px, -3.5px);
+}
+
+/* Hero section with background image */
+.hero {
+  height: 100vh; /* adjust height */
+  background-image: url('Website_BG.jpg');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  padding: 0 20px;
+}
+
+/* Dark overlay on hero */
+.hero::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+/* Text container inside hero */
+.hero-text {
+  position: relative;
+  z-index: 2;
+  max-width: 700px;
+  font-size: clamp(1rem, 2vw, 1.125rem);
+  line-height: 1.5;
+  padding: 0 10px;
+}
+
+/* General section styles */
+section {
+  padding: 30px 0;
+  color: #000;
+}
+
+section .container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 20px;
+  text-align: left;
+}
+
+/* Individual section background colors */
+#diy_bar {
+  background-color: #e3d6d0; /* purple */
+  height: 100vh;
+}
+
+#services {
+  background-color: #f2e9e4; 
+  height: 100vh;
+}
+
+#contact {
+  background-color: #e3d6d0;
+  height: 100vh;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  section {
+    padding: 20px 10px;
+  }
+
+  section .container {
+    max-width: 90vw;
+    padding: 0 10px;
+  }
+
+  .hero {
+    height: auto;
+    padding: 40px 20px;
+  }
+
+  .hero-text {
+    max-width: 90vw;
+    font-size: 16px;
+    padding: 0 10px;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+}
+
+h1 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  margin-bottom: 0.5rem;
+}

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" type="image/png" href="Wine-removebg-preview.png">
+  <meta charset="UTF-8" />
+  <title>Cocktail Maker - About Us</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!-- Navbar: keep as is, shared on all pages -->
+  <div class="navbar">
+    <div class="logo">
+      <a href="https://edodd2004.github.io/cocktail-maker/">Cocktail Maker</a>
+    </div>
+
+    <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+
+    <div class="nav-links" id="navLinks">
+      <a href="https://edodd2004.github.io/cocktail-maker/">Home</a>
+      <a href="diy_bar.html">DIY Bar</a> <!-- Update links to point to subpages -->
+      <a href="about.html">About Us</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </div>
+
+  <!-- ONLY the About Us section -->
+  <section id="services">
+    <div class="container">
+      <h1>About Us</h1>
+      <p>We're passionate about mixology.</p>
+    </div>
+  </section>
+
+  <!-- Navbar toggle script, keep this -->
+  <script>
+    function toggleMenu() {
+      const navLinks = document.getElementById("navLinks");
+      const hamburger = document.getElementById("hamburger");
+
+      navLinks.classList.toggle("active");
+      hamburger.classList.toggle("open");
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" type="image/png" href="Wine-removebg-preview.png" />
+  <meta charset="UTF-8" />
+  <title>Contact - Cocktail Maker</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="navbar">
+    <div class="logo">
+      <a href="index.html">Cocktail Maker</a>
+    </div>
+
+    <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+
+    <div class="nav-links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="diy_bar.html">DIY Bar</a>
+      <a href="about.html">About Us</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </div>
+
+  <section id="contact">
+    <div class="container">
+      <h2>Contact</h2>
+      <p>Email us at cocktail@example.com</p>
+    </div>
+  </section>
+
+  <script>
+    function toggleMenu() {
+      const navLinks = document.getElementById("navLinks");
+      const hamburger = document.getElementById("hamburger");
+
+      navLinks.classList.toggle("active");
+      hamburger.classList.toggle("open");
+    }
+  </script>
+</body>
+
+</html>
