@@ -1,243 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="icon" type="image/png" href="Wine-removebg-preview.png">
+  <link rel="icon" type="image/png" href="Wine-removebg-preview.png" />
   <meta charset="UTF-8" />
   <title>Cocktail Maker</title>
-  <style>
-    form {
-      width: 100vw; /* or 100% if container spans full width */
-      margin: 0;
-      padding: 0; /* adjust if needed */
-      background-color: your-color;
-    }
-
-    body::before {
-      content: "";
-      position: fixed;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background-color: rgba(0, 0, 0, 0.65);
-      z-index: -1;
-    }
-
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      text-align: center;
-      background-color: #000; /* fallback if image missing */
-      color: white;
-      position: relative;
-    }
-
-    .navbar {
-      background-color: #2c1e38;
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
-      top: 0;
-      overflow: visible;
-      padding: 10px 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: relative;
-      z-index: 1000000;
-    }
-
-    .navbar .logo a {
-      color: #ffffff;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 20px;
-    }
-
-    .logo img {
-      height: 40px;
-      width: auto;
-      display: block;
-    }
-
-    .navbar .nav-links {
-      display: flex;
-      gap: 10px;
-    }
-
-    .navbar .nav-links a {
-      color: #ffffff;
-      text-decoration: none;
-      padding: 10px 15px;
-      border: 2px solid transparent;
-      border-radius: 4px;
-      transition: background 0.25s, border 0.25s;
-      font-size: clamp(1rem, 2vw, 1.125rem);
-    }
-
-    .navbar a:hover {
-      border: 2px solid white;
-      border-radius: 4px;
-      padding: 10px 15px;
-    }
-
-    .hamburger {
-      display: none;
-      flex-direction: column;
-      cursor: pointer;
-    }
-
-    .hamburger div {
-      width: 15px;
-      height: 1px;
-      background-color: white;
-      margin: 2px 0;
-      transition: all 0.3s ease;
-      transform-origin: center;
-    }
-
-    @media (max-width: 600px) {
-      .navbar .nav-links {
-        position: fixed;
-        top: 42.5px;
-        left: -100%;
-        width: 100vw;
-        height: 285px;
-        background-color: #2c1e38;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        transition: left 0.3s ease;
-        z-index: 11000;
-      }
-
-      .navbar .nav-links.active {
-        left: 0;
-      }
-      .navbar .nav-links a {
-        font-size: 24px;
-        padding: 15px;
-        color: white;
-      }
-
-      .hamburger {
-        display: flex;
-        z-index: 1101;
-      }
-    }
-
-    /* Hamburger active (X) state */
-    .hamburger.open div:nth-child(1) {
-      transform: rotate(45deg) translate(3.5px, 3.5px);
-    }
-
-    .hamburger.open div:nth-child(2) {
-      opacity: 0;
-    }
-
-    .hamburger.open div:nth-child(3) {
-      transform: rotate(-45deg) translate(3.5px, -3.5px);
-    }
-
-    /* Hero section with background image */
-    .hero {
-      height: 475px; /* adjust height */
-      background-image: url('Website_BG.jpg');
-      background-size: cover;
-      background-position: center;
-      position: relative;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      color: white;
-      padding: 0 20px;
-    }
-
-    /* Dark overlay on hero */
-    .hero::after {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(0, 0, 0, 0.5);
-      z-index: 1;
-    }
-
-    /* Text container inside hero */
-    .hero-text {
-      position: relative;
-      z-index: 2;
-      max-width: 700px;
-      font-size: clamp(1rem, 2vw, 1.125rem);
-      line-height: 1.5;
-      padding: 0, 10px;
-    }
-
-    /* Sections with full width backgrounds */
-    section {
-      padding: 30px 0;
-      color: #000;
-    }
-
-    h1 {
-      font-size: clamp(2rem, 5vw, 3rem);
-      margin-bottom: 0.5rem;
-    }
-
-    section { 
-      padding: 30px 0;
-      color: #000;
-    }
-
-    /* Container to center content inside sections */
-    section .container {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 0 20px;
-      text-align: left;
-    }
-
-    /* Individual section background colors */
-    #recipes {
-      background-color: #e3d6d0; /* purple */
-    }
-
-    #services {
-      background-color: #f2e9e4; /* lighter */
-    }
-
-    #contact {
-      background-color: #e3d6d0;
-    }
-    @media (max-width: 600px) {
-      section {
-        padding: 20px 10px;
-      }
-
-      section .container {
-        max-width: 90vw;
-        padding: 0 10px;
-      }
-
-      .hero {
-        height: auto;
-        padding: 40px 20px;
-      }
-
-      .hero-text {
-        max-width: 90vw;
-        font-size: 16px;
-        padding: 0 10px;
-      }
-
-      h1 {
-        font-size: 24px;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
   <div class="navbar">
     <div class="logo">
-      <a href="https://edodd2004.github.io/cocktail-maker/">Cocktail Maker</a>
+      <a href="index.html">Cocktail Maker</a>
     </div>
 
     <div class="hamburger" id="hamburger" onclick="toggleMenu()">
@@ -247,51 +22,38 @@
     </div>
 
     <div class="nav-links" id="navLinks">
-      <a href="https://edodd2004.github.io/cocktail-maker/">Home</a>
-      <a href="#recipes">Recipes</a>
-      <a href="#services">About Us</a>
-      <a href="#contact">Contact</a>
+      <a href="index.html">Home</a>
+      <a href="diy_bar.html">DIY Bar</a>
+      <a href="about.html">About Us</a>
+      <a href="contact.html">Contact</a>
     </div>
   </div>
 
   <section class="hero">
     <div class="hero-text">
       <h1>Welcome</h1>
-      <p>Whether you've arrived here by curiosity, recommendation, or sheer luck, we're truly delighted to welcome you.
-
-      This website was created with one goal in mind: to be a place where curiosity meets clarity, where ideas are explored deeply, and where people like you—driven, thoughtful, and eager to learn or connect—can find something genuinely valuable.
-
-      Here, you’ll find more than just information or services. You’ll find a commitment to quality, a dedication to honesty, and a belief in the power of shared knowledge. Whether you're browsing casually or on a mission, our aim is to give you an experience that’s useful, enjoyable, and worth coming back to.
-
-      Take your time to explore. Dive into our content, check out the tools and resources we’ve built, and don’t hesitate to reach out if you have questions, suggestions, or just want to say hello. We’re constantly growing and improving, and your presence is a big part of what makes this community meaningful.
-
-      Thanks for stopping by. You’re always welcome here.
-
-      Warm regards,
-
-      Cocktail Maker
+      <p>
+        Whether you've arrived here by curiosity, recommendation, or sheer luck, we're truly delighted to
+        welcome you.
       </p>
-    </div>
-  </section>
-
-  <section id="recipes">
-    <div class="container">
-      <h2>Recipes</h2>
-      <p>Here's where we'll show cocktails soon.</p>
-    </div>
-  </section>
-
-  <section id="services">
-    <div class="container">
-      <h2>About Us</h2>
-      <p>We're passionate about mixology.</p>
-    </div>
-  </section>
-
-  <section id="contact">
-    <div class="container">
-      <h2>Contact</h2>
-      <p>Email us at cocktail@example.com</p>
+      <p>
+        This website was created with one goal in mind: to be a place where curiosity meets clarity, where
+        ideas are explored deeply, and where people like you—driven, thoughtful, and eager to learn or connect—can
+        find something genuinely valuable.
+      </p>
+      <p>
+        Here, you’ll find more than just information or services. You’ll find a commitment to quality, a
+        dedication to honesty, and a belief in the power of shared knowledge. Whether you're browsing casually or on
+        a mission, our aim is to give you an experience that’s useful, enjoyable, and worth coming back to.
+      </p>
+      <p>
+        Take your time to explore. Dive into our content, check out the tools and resources we’ve built, and don’t
+        hesitate to reach out if you have questions, suggestions, or just want to say hello. We’re constantly
+        growing and improving, and your presence is a big part of what makes this community meaningful.
+      </p>
+      <p>Thanks for stopping by. You’re always welcome here.</p>
+      <p>Warm regards,</p>
+      <p>Cocktail Maker</p>
     </div>
   </section>
 
@@ -303,6 +65,75 @@
       navLinks.classList.toggle("active");
       hamburger.classList.toggle("open");
     }
+
+    const data = [
+      {
+        name: "Spirits",
+        children: [
+          {
+            name: "Vodka",
+            children: [
+              { name: "Flavored Vodka" },
+              { name: "Plain Vodka" }
+            ]
+          },
+          {
+            name: "Whiskey",
+            children: [
+              { name: "Bourbon" },
+              { name: "Scotch" }
+            ]
+          }
+        ]
+      },
+      {
+        name: "Mixers",
+        children: [
+          { name: "Soda" },
+          { name: "Juices" }
+        ]
+      }
+    ];
+
+    function createNode(node) {
+      const container = document.createElement('div');
+      container.style.marginLeft = '20px';
+
+      const checkbox = document.createElement('input');
+      checkbox.type = 'checkbox';
+      checkbox.id = node.name;
+
+      const label = document.createElement('label');
+      label.htmlFor = node.name;
+      label.textContent = node.name;
+
+      container.appendChild(checkbox);
+      container.appendChild(label);
+
+      if (node.children && node.children.length) {
+        const childrenContainer = document.createElement('div');
+        childrenContainer.style.display = 'none'; // hidden by default
+        childrenContainer.style.marginLeft = '20px';
+
+        node.children.forEach(child => {
+          childrenContainer.appendChild(createNode(child));
+        });
+
+        container.appendChild(childrenContainer);
+
+        checkbox.addEventListener('change', () => {
+          childrenContainer.style.display = checkbox.checked ? 'block' : 'none';
+        });
+      }
+
+      return container;
+    }
+
+    const root = document.getElementById('checklist-container');
+    data.forEach(item => {
+      root.appendChild(createNode(item));
+    });
   </script>
 </body>
+
 </html>
