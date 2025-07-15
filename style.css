@@ -17,13 +17,13 @@ body {
   margin: 0;
   font-family: Arial, sans-serif;
   text-align: center;
-  background-color: #000; /* fallback if image missing */
-  color: white;
+  background-color: #FFF6E9; /* fallback if image missing */
+  color: #FFF6E9;
   position: relative;
 }
 
 .navbar {
-  background-color: #2c1e38;
+  background-color: #FFF6E9;
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   top: 0;
@@ -55,7 +55,7 @@ body {
 }
 
 .navbar .nav-links a {
-  color: #ffffff;
+  color: #1A2B4C;
   text-decoration: none;
   padding: 10px 15px;
   border: 2px solid transparent;
@@ -65,7 +65,7 @@ body {
 }
 
 .navbar a:hover {
-  border: 2px solid white;
+  border: 2px solid #1A2B4C;
   border-radius: 4px;
   padding: 10px 15px;
 }
@@ -79,7 +79,7 @@ body {
 .hamburger div {
   width: 15px;
   height: 1px;
-  background-color: white;
+  background-color: #1A2B4C;
   margin: 2px 0;
   transition: all 0.3s ease;
   transform-origin: center;
@@ -89,11 +89,11 @@ body {
 @media (max-width: 600px) {
   .navbar .nav-links {
     position: fixed;
-    top: 42.5px;
+    top: 58.5px;
     left: -100%;
     width: 100vw;
     height: 285px;
-    background-color: #2c1e38;
+    background-color: #2C3E50;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -167,7 +167,7 @@ body {
 /* General section styles */
 section {
   padding: 30px 0;
-  color: #000;
+  color: #FFF6E9;
 }
 
 section .container {
@@ -179,17 +179,17 @@ section .container {
 
 /* Individual section background colors */
 #diy_bar {
-  background-color: #e3d6d0; /* purple */
+  background-color: #2C3E50; /* purple */
   height: 100vh;
 }
 
 #services {
-  background-color: #f2e9e4; 
+  background-color: #2C3E50; 
   height: 100vh;
 }
 
 #contact {
-  background-color: #e3d6d0;
+  background-color: #2C3E50;
   height: 100vh;
 }
 
