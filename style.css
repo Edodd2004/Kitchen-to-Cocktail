@@ -1,9 +1,22 @@
-form {
-  width: 100vw; /* or 100% if container spans full width */
+html, body {
+  height: auto;
+  min-height: 100vh;
   margin: 0;
-  padding: 0; /* adjust if needed */
-  background-color: your-color;
+  padding: 0;
+  overflow-y: auto;
 }
+
+
+form {
+  width: 100%;          /* safer than 100vw */
+  max-width: 800px;     /* optional, limits max width */
+  margin: 0 auto;       /* center horizontally */
+  padding: 20px;        /* some padding so content isn't flush */
+  background-color: #031E44;
+  box-sizing: border-box; /* include padding in width */
+}
+
+
 
 body::before {
   content: "";
@@ -296,18 +309,22 @@ section .container {
 
 /* Individual section background colors */
 #diy_bar {
-  background-color: #2C3E50; /* purple */
+  background-color: #031E44; /* purple */
   height: 100vh;
 }
 
-#services {
-  background-color: #2C3E50;
-  height: 100vh;
+#about {
+  background-color: #031E44;
+  height: auto;
 }
 
 #contact {
-  background-color: #2C3E50;
   height: 100vh;
+  background-color: #031E44;
+  color: white;
+  padding: 60px 20px;
+  text-align: center;
+  padding-bottom: 80px;
 }
 
 /* Responsive adjustments */
@@ -345,7 +362,6 @@ h1 {
   background-color: #031E44; /* dark blue background like navbar */
   padding: 15px 0;
   text-align: center;
-  margin-top: -250px;
   position: relative;
 }
 
@@ -356,6 +372,91 @@ h1 {
   font-weight: bold;
   font-size: 1rem;
   transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #F7A072; /* a nice highlight color on hover */
+  text-decoration: underline;
+}
+
+
+
+#contact h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+#contact p {
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+  text-align: left;
+}
+
+.contact-form {
+  width: 100%;
+  max-width: none;         /* ensure no limit */
+  padding: 0 5vw;          /* 5% padding on each side */
+  box-sizing: border-box;  /* ensure padding doesn't shrink the content */
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 80px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px 15px;
+  box-sizing: border-box;
+  border-radius: 8px;
+  border: none;
+  background-color: #1f3f67;
+  color: white;
+  font-size: 16px;
+  margin-bottom: 20px; /* space between fields */
+  resize: vertical; /* for textarea */
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: #b0c4de;
+}
+textarea {
+  max-height: 125px;  /* or any suitable max height */
+  overflow-y: auto;   /* adds a scrollbar inside the textarea when content exceeds max height */
+  width: 100%;
+  box-sizing: border-box;
+}
+
+
+.contact-form button {
+  background-color: #2D3F5B;
+  width: 100%;
+  color: white;
+  padding: 14px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: #1b2d4d;
+}
+.contact-form label {
+  display: block;
+  text-align: left;
+  margin-bottom: 6px; /* small space between label and input */
+  font-weight: 600;
+  color: #FFF9F0; /* or whatever color fits your design */
+}
+.top-right-photo {
+  float: right;
+  width: 150px;
+  height: auto;
+  margin: 0 0 15px 15px; /* margin top right bottom left */
 }
 
 .footer-links a:hover {
