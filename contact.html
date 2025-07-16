@@ -16,7 +16,7 @@
       </a>
     </div>
 
-    <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+    <div class="hamburger" id="hamburger">
       <div></div>
       <div></div>
       <div></div>
@@ -29,47 +29,82 @@
     </div>
   </div>
 
-<section id="contact">
-  <img src="Contact_Us_Logo-removebg-preview.png" alt="Contact Us Logo" class="top-right-photo" />
-  <h1>Contact Us</h1>
-  <p>Feel free to get in touch with us for any questions or suggestions about our page and cocktails!</p>
-  <form class="contact-form">
-    <label for="name">Name</label>
-    <input id="name" type="text" required data-maxwords="10" />
+  <section id="contact">
+    <img src="Contact_Us_Logo-removebg-preview.png" alt="Contact Us Logo" class="top-right-photo" />
+    <h1>Contact</h1>
+    <p>Feel free to get in touch with us for any questions or suggestions about our page and cocktails!</p>
 
-    <label for="email">Email</label>
-    <input id="email" type="email" required data-maxwords="1" />
+    <form class="contact-form" action="https://formspree.io/f/meozqnbj" method="POST">
+      <label for="name">Name</label>
+      <input id="name" name="name" type="text" required data-maxwords="10" />
 
-    <label for="subject">Subject</label>
-    <input id="subject" type="text" data-maxwords="5" />
+      <label for="email">Email</label>
+      <input id="email" name="email" type="email" required data-maxwords="1" />
 
-    <label for="message">Message</label>
-    <textarea id="message" rows="5" required data-maxwords="50"></textarea>
+      <label for="subject">Subject</label>
+      <input id="subject" name="subject" type="text" data-maxwords="5" />
 
-    <button type="submit">Send Message</button>
-  </form>
-</section>
+      <label for="message">Message</label>
+      <textarea id="message" name="message" rows="5" required data-maxwords="50"></textarea>
+
+      <button type="submit">Send Message</button>
+      <p id="form-status" style="margin-top: 1em;"></p>
+    </form>
+  </section>
 
   <script>
-    function toggleMenu() {
+    document.addEventListener("DOMContentLoaded", () => {
+      // Toggle nav menu
       const navLinks = document.getElementById("navLinks");
       const hamburger = document.getElementById("hamburger");
 
-      navLinks.classList.toggle("active");
-      hamburger.classList.toggle("open");
-    }
+      hamburger.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+        hamburger.classList.toggle("open");
+      });
 
-    // Word limit script
-    document.querySelectorAll('[data-maxwords]').forEach((field) => {
-      field.addEventListener('input', () => {
-        const maxWords = parseInt(field.getAttribute('data-maxwords'), 10);
-        const words = field.value.trim().split(/\s+/);
-        
-        if (words.length > maxWords) {
-          field.value = words.slice(0, maxWords).join(' ');
+      // Word limit enforcement
+      document.querySelectorAll('[data-maxwords]').forEach((field) => {
+        field.addEventListener('input', () => {
+          const maxWords = parseInt(field.getAttribute('data-maxwords'), 10);
+          const words = field.value.trim().split(/\s+/);
+          if (words.length > maxWords) {
+            field.value = words.slice(0, maxWords).join(' ');
+          }
+        });
+      });
+
+      // Form submission with feedback
+      const form = document.querySelector(".contact-form");
+      const status = document.getElementById("form-status");
+
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const data = new FormData(form);
+        const response = await fetch(form.action, {
+          method: form.method,
+          body: data,
+          headers: { 'Accept': 'application/json' }
+        });
+
+        if (response.ok) {
+          status.textContent = "✅ Thanks for your message!";
+          status.style.color = "green";
+          form.reset();
+        } else {
+          status.textContent = "❌ Oops! Something went wrong.";
+          status.style.color = "red";
         }
       });
     });
+
+    <div id="thankYouPopup" class="popup hidden">
+    <div class="popup-content">
+      <span class="close-btn" id="closePopup">&times;</span>
+      <h2>Thank you!</h2>
+      <p>Your message has been sent.</p>
+    </div>
+  </div>
   </script>
 
   <footer class="site-footer">
@@ -80,8 +115,4 @@
     </div>
   </footer>
 </body>
-</html>
-  </script>
-</body>
-
 </html>
