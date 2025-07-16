@@ -5,7 +5,7 @@
    <link rel="icon" type="image/png" sizes="192x192" href="Website_Logo.png">
 
   <meta charset="UTF-8" />
-  <title>Cocktail Maker</title>
+  <title>Kitchen to Cocktail</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 
@@ -30,31 +30,41 @@
     </div>
   </div>
 
+
   <section class="hero">
     <div class="hero-text">
-      <h1>Welcome</h1>
-      <p>
-        Whether you've arrived here by curiosity, recommendation, or sheer luck, we're truly delighted to
-        welcome you.
-      </p>
-      <p>
-        This website was created with one goal in mind: to be a place where curiosity meets clarity, where
-        ideas are explored deeply, and where people like you—driven, thoughtful, and eager to learn or connect—can
-        find something genuinely valuable.
-      </p>
-      <p>
-        Here, you’ll find more than just information or services. You’ll find a commitment to quality, a
-        dedication to honesty, and a belief in the power of shared knowledge. Whether you're browsing casually or on
-        a mission, our aim is to give you an experience that’s useful, enjoyable, and worth coming back to.
-      </p>
-      <p>
-        Take your time to explore. Dive into our content, check out the tools and resources we’ve built, and don’t
-        hesitate to reach out if you have questions, suggestions, or just want to say hello. We’re constantly
-        growing and improving, and your presence is a big part of what makes this community meaningful.
-      </p>
-      <p>Thanks for stopping by. You’re always welcome here.</p>
-      <p>Warm regards,</p>
-      <p>Cocktail Maker</p>
+      <h1>Mix cocktails based on what’s in your kitchen</h1>
+      
+      
+      <button class="start-button">Start Mixing</button>
+      <p>Or mix things up with a mode:</p>
+
+      <div class="mode-icons">
+        <div class="mode" onclick="setMode('student')">
+          <div class="icon-box">
+            <img src="Student_icon.png" alt="Student Mode" />
+            <p>Student Mode</p>
+          </div>
+        </div>
+        <div class="mode" onclick="setMode('fitness')">
+          <div class="icon-box">
+            <img src="gym_icon.png" alt="Fitness Mode" />
+            <p>Fitness Mode</p>
+          </div>
+        </div>
+        <div class="mode" onclick="setMode('casual')">
+          <div class="icon-box">
+            <img src="Mocktail_icon.png" alt="Mocktail Mode" />
+            <p>Mocktail Mode</p>
+          </div>
+        </div>
+        <div class="mode" onclick="setMode('daredevil')">
+          <div class="icon-box">
+            <img src="fancy_icon.png" alt="Elegant Mode" />
+            <p>Elegant Mode</p>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -135,6 +145,14 @@
       root.appendChild(createNode(item));
     });
   </script>
+  <footer class="site-footer">
+  <div class="footer-links">
+    <a href="about.html">About</a>
+    <a href="faq.html">FAQ</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</footer>
+
 </body>
 
 </html>
