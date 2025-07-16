@@ -36,17 +36,35 @@ body {
   z-index: 1000000;
 }
 
+/* FIXED: Logo link styles to prevent large border box on click/hover */
+.navbar .logo a,
+.navbar .logo a:focus,
+.navbar .logo a:hover,
+.navbar .logo a:active {
+  outline: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  background: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  cursor: pointer;
+}
+
+/* Logo image size lock */
+.logo img {
+  height: 40px;
+  width: auto;
+  display: block;
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
 .navbar .logo a {
   color: #ffffff;
   text-decoration: none;
   font-weight: bold;
   font-size: 20px;
-}
-
-.logo img {
-  height: 40px;
-  width: auto;
-  display: block;
 }
 
 .navbar .nav-links {
@@ -114,6 +132,24 @@ body {
   .hamburger {
     display: flex;
     z-index: 1101;
+  }
+
+  /* Logo size + reset hover/focus behavior inside media query */
+  .navbar img {
+    height: 40px;
+    width: auto;
+    display: block;
+    border: none;
+  }
+
+  /* Remove outline/border on logo links when clicked or hovered */
+  .navbar a:focus,
+  .navbar a:active,
+  .navbar a:hover {
+    outline: none;
+    border: none;
+    box-shadow: none;
+    background: none;
   }
 }
 
@@ -184,7 +220,7 @@ section .container {
 }
 
 #services {
-  background-color: #2C3E50; 
+  background-color: #2C3E50;
   height: 100vh;
 }
 
