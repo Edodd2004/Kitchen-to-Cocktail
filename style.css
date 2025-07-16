@@ -2,7 +2,7 @@ html, body {
   margin: 0;
   padding: 0;
   min-height: 100vh;
-  color: #FFF9F0;
+  color: #FFF6E9;
   height: auto;
   overflow-x: hidden;
   display: flex;
@@ -13,7 +13,7 @@ html, body {
 
 footer {
   background-color: #031E44;
-  color: #FFF9F0;
+  color: #FFF6E9;
   padding: 20px;
   text-align: center;
 }
@@ -42,13 +42,13 @@ body {
   margin: 0;
   font-family: Arial, sans-serif;
   text-align: center;
-  background-color: #FFF9F0; /* fallback if image missing */
-  color: #FFF9F0;
+  background-color: #FFF6E9; /* fallback if image missing */
+  color: #FFF6E9;
   position: relative;
 }
 
 .navbar {
-  background-color: #FFF9F0;
+  background-color: #FFF6E9;
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   top: 0;
@@ -151,7 +151,7 @@ body {
   .navbar .nav-links a {
     font-size: 24px;
     padding: 15px;
-    color: #FFF9F0;
+    color: #FFF6E9;
   }
 
   .hamburger {
@@ -241,10 +241,10 @@ body {
 }
 /* New wrapper for icon + text */
 .icon-box {
-  border: 3px solid #FFF9F0;   /* white border */
+  border: 3px solid #FFF6E9;   /* white border */
   border-radius: 8px;
   padding: 15px 10px 10px 10px; /* more padding top and sides, less bottom */
-  background-color: #FFF9F0;    /* white background inside border */
+  background-color: #FFF6E9;    /* white background inside border */
   width: 120px;                 /* fix width */
   box-sizing: border-box;
   display: flex;
@@ -281,7 +281,7 @@ body {
 .start-button {
   margin-top: 40px;
   background-color: #F44336;
-  color: #FFF9F0;
+  color: #FFF6E9;
   font-weight: bold;
   border: none;
   padding: 18px 35px;
@@ -378,7 +378,7 @@ h1 {
 }
 
 .footer-links a {
-  color: #FFF9F0; /* light color like navbar text */
+  color: #FFF6E9; /* light color like navbar text */
   margin: 0 15px;
   text-decoration: none;
   font-weight: bold;
@@ -424,7 +424,7 @@ h1 {
   border-radius: 8px;
   border: none;
   background-color: #1f3f67;
-  color: #FFF9F0;
+  color: #FFF6E9;
   font-size: 16px;
   margin-bottom: 20px; /* space between fields */
   resize: vertical; /* for textarea */
@@ -445,7 +445,7 @@ textarea {
 .contact-form button {
   background-color: #2D3F5B;
   width: 100%;
-  color: #FFF9F0;
+  color: #FFF6E9;
   padding: 14px;
   font-size: 16px;
   border-radius: 8px;
@@ -462,7 +462,7 @@ textarea {
   text-align: left;
   margin-bottom: 6px; /* small space between label and input */
   font-weight: 600;
-  color: #FFF9F0; /* or whatever color fits your design */
+  color: #FFF6E9; /* or whatever color fits your design */
 }
 .top-right-photo {
   float: right;
@@ -511,7 +511,7 @@ textarea {
 #FAQ {
   min-height: 100vh;
   background-color: #031E44;
-  color: #FFF9F0;
+  color: #FFF6E9;
   padding: 60px 20px 100px;
   text-align: center;
 }
@@ -530,7 +530,7 @@ textarea {
   font-size: 32px;
   margin-top: 40px;
   text-align: left;
-  color: #FFF9F0;
+  color: #FFF6E9;
 }
 
 #FAQ p {
