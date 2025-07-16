@@ -508,3 +508,37 @@ textarea {
 .hidden {
   display: none;
 }
+#FAQ {
+  min-height: 100vh;
+  background-color: #031E44;
+  color: #FFF9F0;
+  padding: 60px 20px 100px;
+  text-align: center;
+}
+
+#FAQ h1 {
+  font-size: 48px;
+  margin-bottom: 40px;
+  text-align: center;
+  font-weight: 700;
+
+  display: inline-block;
+  padding-bottom: 10px;
+}
+
+#FAQ h2 {
+  font-size: 32px;
+  margin-top: 40px;
+  text-align: left;
+  color: #FFF9F0;
+}
+
+#FAQ p {
+  font-size: 20px;
+  line-height: 1.6;
+  margin: 10px 0 30px;
+  text-align: left;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
