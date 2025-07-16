@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="icon" type="image/png" href="Wine-removebg-preview.png" />
+  <link rel="icon" type="image/png" href="Website_Logo.png" />
   <meta charset="UTF-8" />
-  <title>Contact - Cocktail Maker</title>
+  <title>Contact - Kitchen to Cocktail</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 
@@ -30,12 +29,26 @@
     </div>
   </div>
 
-  <section id="contact">
-    <div class="container">
-      <h2>Contact</h2>
-      <p>Email us at cocktail@example.com</p>
-    </div>
-  </section>
+<section id="contact">
+  <img src="Contact_Us_Logo-removebg-preview.png" alt="Contact Us Logo" class="top-right-photo" />
+  <h1>Contact Us</h1>
+  <p>Feel free to get in touch with us for any questions or suggestions about our page and cocktails!</p>
+  <form class="contact-form">
+    <label for="name">Name</label>
+    <input id="name" type="text" required data-maxwords="10" />
+
+    <label for="email">Email</label>
+    <input id="email" type="email" required data-maxwords="1" />
+
+    <label for="subject">Subject</label>
+    <input id="subject" type="text" data-maxwords="5" />
+
+    <label for="message">Message</label>
+    <textarea id="message" rows="5" required data-maxwords="50"></textarea>
+
+    <button type="submit">Send Message</button>
+  </form>
+</section>
 
   <script>
     function toggleMenu() {
@@ -45,9 +58,28 @@
       navLinks.classList.toggle("active");
       hamburger.classList.toggle("open");
     }
-  </script>
-</body>
 
+    // Word limit script
+    document.querySelectorAll('[data-maxwords]').forEach((field) => {
+      field.addEventListener('input', () => {
+        const maxWords = parseInt(field.getAttribute('data-maxwords'), 10);
+        const words = field.value.trim().split(/\s+/);
+        
+        if (words.length > maxWords) {
+          field.value = words.slice(0, maxWords).join(' ');
+        }
+      });
+    });
+  </script>
+
+  <footer class="site-footer">
+    <div class="footer-links">
+      <a href="about.html">About</a>
+      <a href="faq.html">FAQ</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </footer>
+</body>
 </html>
 
   </script>
