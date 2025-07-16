@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+   <link rel="icon" type="image/png" sizes="192x192" href="Website_Logo.png">
+
+  <meta charset="UTF-8" />
+  <title>Kitchen to Cocktail</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="navbar">
+    <div class="logo">
+      <a href="index.html">
+        <img src="Website_Logo.png" alt="Logo" style="height: 40px; width: auto;">
+      </a>
+    </div>
+
+    <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+
+    <div class="nav-links" id="navLinks">
+      <a href="diy_bar.html">DIY Bar</a>
+      <a href="about.html">About Us</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </div>
+
+<section id="FAQ">
+
+  <h1>Frequently Asked Questions</h1>
+
+  <h2>What is Kitchen to Cocktail?</h2>
+  <p><span class="highlight">*</span>Kitchen to Cocktail is your one-stop guide for transforming everyday ingredients into meals and craft cocktails. Whether you’re cooking dinner or mixing drinks for friends, we’ve got you covered.</p>
+
+  <h2>Do I need to be a professional chef or bartender to use this site?</h2>
+  <p>Not at all! Our recipes and cocktail guides are designed for home cooks and casual mixologists. No fancy equipment or experience required—just curiosity and a love for good food and drink.</p>
+
+  <h2>How are the recipes chosen?</h2>
+  <p>We focus on approachable, flavorful recipes that use common kitchen ingredients. Our cocktail recommendations often complement the meals, so you can easily create a complete dining and drinking experience.</p>
+
+  <h2>Is this site free to use?</h2>
+  <p>Yes! All content on Kitchen to Cocktail is currently free. In the future, we may add premium features or exclusive content, but the core recipes and guides will remain accessible.</p>
+
+  <h2>Need more help?</h2>
+  <p>If your question isn’t listed, drop us a message—we’re happy to help!</p>
+</section>
+ <script>
+    function toggleMenu() {
+      const navLinks = document.getElementById("navLinks");
+      const hamburger = document.getElementById("hamburger");
+
+      navLinks.classList.toggle("active");
+      hamburger.classList.toggle("open");
+    }
+
+    const data = [
+      {
+        name: "Spirits",
+        children: [
+          {
+            name: "Vodka",
+            children: [
+              { name: "Flavored Vodka" },
+              { name: "Plain Vodka" }
+            ]
+          },
+          {
+            name: "Whiskey",
+            children: [
+              { name: "Bourbon" },
+              { name: "Scotch" }
+            ]
+          }
+        ]
+      },
+      {
+        name: "Mixers",
+        children: [
+          { name: "Soda" },
+          { name: "Juices" }
+        ]
+      }
+    ];
+
+    function createNode(node) {
+      const container = document.createElement('div');
+      container.style.marginLeft = '20px';
+
+      const checkbox = document.createElement('input');
+      checkbox.type = 'checkbox';
+      checkbox.id = node.name;
+
+      const label = document.createElement('label');
+      label.htmlFor = node.name;
+      label.textContent = node.name;
+
+      container.appendChild(checkbox);
+      container.appendChild(label);
+
+      if (node.children && node.children.length) {
+        const childrenContainer = document.createElement('div');
+        childrenContainer.style.display = 'none'; // hidden by default
+        childrenContainer.style.marginLeft = '20px';
+
+        node.children.forEach(child => {
+          childrenContainer.appendChild(createNode(child));
+        });
+
+        container.appendChild(childrenContainer);
+
+        checkbox.addEventListener('change', () => {
+          childrenContainer.style.display = checkbox.checked ? 'block' : 'none';
+        });
+      }
+
+      return container;
+    }
+
+    const root = document.getElementById('checklist-container');
+    data.forEach(item => {
+      root.appendChild(createNode(item));
+    });
+  </script>
+
+<footer class="site-footer">
+  <div class="footer-links">
+    <a href="about.html">About</a>
+    <a href="faq.html">FAQ</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</footer>
+</body>
+</html>
