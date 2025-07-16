@@ -1,9 +1,21 @@
 html, body {
-  height: auto;
-  min-height: 100vh;
   margin: 0;
   padding: 0;
-  overflow-y: auto;
+  min-height: 100vh;
+  color: #FFF9F0;
+  height: auto;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  scroll-behavior: smooth;
+}
+
+
+footer {
+  background-color: #031E44;
+  color: #FFF9F0;
+  padding: 20px;
+  text-align: center;
 }
 
 
@@ -139,7 +151,7 @@ body {
   .navbar .nav-links a {
     font-size: 24px;
     padding: 15px;
-    color: white;
+    color: #FFF9F0;
   }
 
   .hamburger {
@@ -319,9 +331,9 @@ section .container {
 }
 
 #contact {
-  height: 100vh;
+  min-height: 100vh;
   background-color: #031E44;
-  color: white;
+  color: FFF9F0;
   padding: 60px 20px;
   text-align: center;
   padding-bottom: 80px;
@@ -382,13 +394,13 @@ h1 {
 
 
 #contact h1 {
-  font-size: 2.5rem;
+  font-size: 40px;
   margin-bottom: 10px;
   text-align: left;
 }
 
 #contact p {
-  font-size: 1.1rem;
+  font-size: 22px;
   margin-bottom: 30px;
   text-align: left;
 }
@@ -412,7 +424,7 @@ h1 {
   border-radius: 8px;
   border: none;
   background-color: #1f3f67;
-  color: white;
+  color: #FFF9F0;
   font-size: 16px;
   margin-bottom: 20px; /* space between fields */
   resize: vertical; /* for textarea */
@@ -423,7 +435,7 @@ h1 {
   color: #b0c4de;
 }
 textarea {
-  max-height: 125px;  /* or any suitable max height */
+  max-height: 1500px;  /* or any suitable max height */
   overflow-y: auto;   /* adds a scrollbar inside the textarea when content exceeds max height */
   width: 100%;
   box-sizing: border-box;
@@ -433,7 +445,7 @@ textarea {
 .contact-form button {
   background-color: #2D3F5B;
   width: 100%;
-  color: white;
+  color: #FFF9F0;
   padding: 14px;
   font-size: 16px;
   border-radius: 8px;
@@ -458,8 +470,6 @@ textarea {
   height: auto;
   margin: 0 0 15px 15px; /* margin top right bottom left */
 }
-
-.footer-links a:hover {
-  color: #F7A072; /* a nice highlight color on hover */
-  text-decoration: underline;
+textarea {
+  scroll-behavior: smooth;
 }
