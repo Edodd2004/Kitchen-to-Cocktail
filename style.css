@@ -362,9 +362,3 @@ h1 {
   color: #F7A072; /* a nice highlight color on hover */
   text-decoration: underline;
 }
-
-
-h1 {
-  font-size: clamp(2rem, 5vw, 3rem);
-  margin-bottom: 0.5rem;
-}
