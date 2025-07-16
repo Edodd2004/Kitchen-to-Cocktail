@@ -17,13 +17,13 @@ body {
   margin: 0;
   font-family: Arial, sans-serif;
   text-align: center;
-  background-color: #FFF6E9; /* fallback if image missing */
-  color: #FFF6E9;
+  background-color: #FFF9F0; /* fallback if image missing */
+  color: #FFF9F0;
   position: relative;
 }
 
 .navbar {
-  background-color: #FFF6E9;
+  background-color: #FFF9F0;
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   top: 0;
@@ -73,7 +73,7 @@ body {
 }
 
 .navbar .nav-links a {
-  color: #1A2B4C;
+  color: #031E44;
   text-decoration: none;
   padding: 10px 15px;
   border: 2px solid transparent;
@@ -83,7 +83,7 @@ body {
 }
 
 .navbar a:hover {
-  border: 2px solid #1A2B4C;
+  border: 2px solid #031E44;
   border-radius: 4px;
   padding: 10px 15px;
 }
@@ -97,7 +97,7 @@ body {
 .hamburger div {
   width: 15px;
   height: 1px;
-  background-color: #1A2B4C;
+  background-color: #031E44;
   margin: 2px 0;
   transition: all 0.3s ease;
   transform-origin: center;
@@ -111,7 +111,7 @@ body {
     left: -100%;
     width: 100vw;
     height: 285px;
-    background-color: #2C3E50;
+    background-color: #031E44;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -166,39 +166,120 @@ body {
   transform: rotate(-45deg) translate(3.5px, -3.5px);
 }
 
-/* Hero section with background image */
+
 .hero {
-  height: 100vh; /* adjust height */
-  background-image: url('Website_BG.jpg');
-  background-size: cover;
-  background-position: center;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  padding: 60px 20px;
   text-align: center;
-  color: white;
-  padding: 0 20px;
+  height: 100vh;
+  background-color: #031E44;
 }
 
-/* Dark overlay on hero */
-.hero::after {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(0, 0, 0, 0.5);
-  z-index: 1;
+
+.hero-text h1 {
+  font-size: 40px;
+  margin-bottom: 10px;
 }
+
 
 /* Text container inside hero */
-.hero-text {
-  position: relative;
-  z-index: 2;
-  max-width: 700px;
-  font-size: clamp(1rem, 2vw, 1.125rem);
-  line-height: 1.5;
-  padding: 0 10px;
+.hero-text p {
+  font-size: 22px;
+  margin-bottom: 30px;
 }
+
+.mode-icons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.mode {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.mode:hover {
+  transform: scale(1.05);
+}
+
+
+.mode p {
+  font-weight: bold;
+  font-size: 16px;
+  margin: 0;
+  color:#2C3E50;
+  text-align: centre;
+}
+/* New wrapper for icon + text */
+.icon-box {
+  border: 3px solid #FFF9F0;   /* white border */
+  border-radius: 8px;
+  padding: 15px 10px 10px 10px; /* more padding top and sides, less bottom */
+  background-color: #FFF9F0;    /* white background inside border */
+  width: 120px;                 /* fix width */
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer; /* optional, if you want the box clickable */
+  transition: transform 0.2s ease;
+}
+
+.icon-box:hover {
+  transform: scale(1.05);
+}
+
+/* Remove border & padding from image */
+.icon-box img {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  margin-bottom: 10px;
+  border: none;
+  padding: 0;
+  border-radius: 6px; /* optional slight rounding of image corners */
+}
+
+/* Style the label inside the box */
+.icon-box p {
+  font-weight: bold;
+  font-size: 16px;
+  margin: 0;
+  color: #2C3E50;
+  text-align: center;
+}
+
+.start-button {
+  margin-top: 40px;
+  background-color: #F44336;
+  color: #FFF9F0;
+  font-weight: bold;
+  border: none;
+  padding: 18px 35px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  transition: background-color 0.3s ease;
+  margin-bottom: 30px; /* adds spacing from the icons */
+}
+
+.start-button:hover {
+  background-color:#F44336;
+   transform: scale(1.05);
+}
+
+/* Fix icon container spacing */
+.hero-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 
 /* General section styles */
 section {
@@ -255,6 +336,33 @@ section .container {
     font-size: 24px;
   }
 }
+
+h1 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  margin-bottom: 0.5rem;
+}
+.site-footer {
+  background-color: #031E44; /* dark blue background like navbar */
+  padding: 15px 0;
+  text-align: center;
+  margin-top: -100px;
+  position: relative;
+}
+
+.footer-links a {
+  color: #FFF9F0; /* light color like navbar text */
+  margin: 0 15px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #F7A072; /* a nice highlight color on hover */
+  text-decoration: underline;
+}
+
 
 h1 {
   font-size: clamp(2rem, 5vw, 3rem);
