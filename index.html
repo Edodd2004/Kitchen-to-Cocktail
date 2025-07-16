@@ -30,26 +30,45 @@
     </div>
   </div>
 
-<section id="FAQ">
 
-  <h1>Frequently Asked Questions</h1>
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Mix cocktails based on what’s in your kitchen</h1>
+      
+      
+      <button class="start-button">Start Mixing</button>
+      <p>Or mix things up with a mode:</p>
 
-  <h2>What is Kitchen to Cocktail?</h2>
-  <p><span class="highlight">*</span>Kitchen to Cocktail is your one-stop guide for transforming everyday ingredients into meals and craft cocktails. Whether you’re cooking dinner or mixing drinks for friends, we’ve got you covered.</p>
+      <div class="mode-icons">
+        <div class="mode" onclick="setMode('student')">
+          <div class="icon-box">
+            <img src="Student_icon.png" alt="Student Mode" />
+            <p>Student Mode</p>
+          </div>
+        </div>
+        <div class="mode" onclick="setMode('fitness')">
+          <div class="icon-box">
+            <img src="gym_icon.png" alt="Fitness Mode" />
+            <p>Fitness Mode</p>
+          </div>
+        </div>
+        <div class="mode" onclick="setMode('casual')">
+          <div class="icon-box">
+            <img src="Mocktail_icon.png" alt="Mocktail Mode" />
+            <p>Mocktail Mode</p>
+          </div>
+        </div>
+        <div class="mode" onclick="setMode('daredevil')">
+          <div class="icon-box">
+            <img src="fancy_icon.png" alt="Elegant Mode" />
+            <p>Elegant Mode</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <h2>Do I need to be a professional chef or bartender to use this site?</h2>
-  <p>Not at all! Our recipes and cocktail guides are designed for home cooks and casual mixologists. No fancy equipment or experience required—just curiosity and a love for good food and drink.</p>
-
-  <h2>How are the recipes chosen?</h2>
-  <p>We focus on approachable, flavorful recipes that use common kitchen ingredients. Our cocktail recommendations often complement the meals, so you can easily create a complete dining and drinking experience.</p>
-
-  <h2>Is this site free to use?</h2>
-  <p>Yes! All content on Kitchen to Cocktail is currently free. In the future, we may add premium features or exclusive content, but the core recipes and guides will remain accessible.</p>
-
-  <h2>Need more help?</h2>
-  <p>If your question isn’t listed, drop us a message—we’re happy to help!</p>
-</section>
- <script>
+  <script>
     function toggleMenu() {
       const navLinks = document.getElementById("navLinks");
       const hamburger = document.getElementById("hamburger");
@@ -126,7 +145,6 @@
       root.appendChild(createNode(item));
     });
   </script>
-
 <footer class="site-footer">
   <div class="footer-links">
     <a href="about.html">About</a>
@@ -134,5 +152,7 @@
     <a href="contact.html">Contact</a>
   </div>
 </footer>
+
 </body>
+
 </html>
