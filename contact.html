@@ -30,22 +30,22 @@
   </div>
 
   <section id="contact">
-    <img src="Contact_Us_Logo-removebg-preview.png" alt="Contact Us Logo" class="top-right-photo" />
+  
     <h1>Contact</h1>
+    <div class="about-heading-line"></div>
     <p>Feel free to get in touch with us for any questions or suggestions about our page and cocktails!</p>
 
     <form class="contact-form" action="https://formspree.io/f/meozqnbj" method="POST">
       <label for="name">Name</label>
-      <input id="name" name="name" type="text" required data-maxwords="10" />
+      <input id="name" name="name" type="text" required data-maxwords="10" placeholder="Write your name" />
 
       <label for="email">Email</label>
-      <input id="email" name="email" type="email" required data-maxwords="1" />
+      <input id="email" name="email" type="email" required data-maxwords="1" placeholder="Enter your email" />
 
       <label for="subject">Subject</label>
-      <input id="subject" name="subject" type="text" data-maxwords="5" />
-
+      <input id="subject" name="subject" type="text" data-maxwords="5" placeholder="Subject of your message" />
       <label for="message">Message</label>
-      <textarea id="message" name="message" rows="5" required data-maxwords="50"></textarea>
+      <textarea id="message" name="message" rows="5" required data-maxwords="50" placeholder="Write your message here"></textarea>
 
       <button type="submit">Send Message</button>
       <p id="form-status" style="margin-top: 1em;"></p>
