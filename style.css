@@ -542,3 +542,111 @@ textarea {
   margin-left: auto;
   margin-right: auto;
 }
+.about-section {
+  position: relative;
+  font-family: 'Georgia', serif;
+  color: #F5EBDC;
+  text-align: left;
+  overflow: hidden;
+}
+
+/* Add blurred background image as a pseudo-element */
+.about-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('About_Us_Background.PNG') no-repeat center center/cover;
+  filter: blur(4px);
+  z-index: 0;
+}
+
+/* Ensure all content sits above the blurred background */
+.about-section > * {
+  position: relative;
+  z-index: 1;
+}
+
+.about-heading-line {
+  width: 95%;
+  height: 2px;
+  background-color: #F5EBDC;
+  margin: 10px 20px 30px 20px; /* top, right, bottom, left */
+}
+
+
+
+.about-section h1,
+.about-section h2,
+.ethos-heading {
+  font-size: 40px;
+  text-align: left;
+  padding-left: 20px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.about-section p,
+.ethos-content p {
+  font-size: 22px;
+  text-align: left;
+  padding-left: 20px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Make about-content a flex container with horizontal alignment */
+.about-content {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  max-width: 1000px;
+  margin: 0 auto 40px;
+  align-items: center; /* Vertically center text and photo */
+  white-space: nowrap; /* Keep text on one line if possible */
+}
+
+.about-photo-container {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+  margin-top: -80px; /* Adjust if you want photo overlap */
+  margin-bottom: 40px;
+}
+
+.about-photo {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  border-radius: 8px;
+  padding-top: 125px;
+}
+
+.ethos-content {
+  margin: 0 auto;
+  text-align: left;
+}
+
+.ethos-heading {
+  /* font-size moved to top section */
+  margin-top: 20px;
+  margin-bottom: 20px;
+  white-space: nowrap;
+}
+
+.ethos-images {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.ethos-images img {
+  max-width: 200px;
+  height: auto;
+  border: 2px solid #F5EBDC;
+}
