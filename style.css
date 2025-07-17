@@ -9,27 +9,20 @@ html, body {
   flex-direction: column;
   scroll-behavior: smooth;
 }
-
-
 footer {
   background-color: #031E44;
   color: #FFF6E9;
   padding: 20px;
   text-align: center;
 }
-
-
 form {
-  width: 100%;          /* safer than 100vw */
-  max-width: 800px;     /* optional, limits max width */
-  margin: 0 auto;       /* center horizontally */
-  padding: 20px;        /* some padding so content isn't flush */
+  width: 100%;          
+  max-width: 800px;    
+  margin: 0 auto; 
+  padding: 20px;       
   background-color: #031E44;
-  box-sizing: border-box; /* include padding in width */
+  box-sizing: border-box; 
 }
-
-
-
 body::before {
   content: "";
   position: fixed;
@@ -37,16 +30,14 @@ body::before {
   background-color: rgba(0, 0, 0, 0.65);
   z-index: -1;
 }
-
 body {
   margin: 0;
   font-family: Arial, sans-serif;
   text-align: center;
-  background-color: #FFF6E9; /* fallback if image missing */
+  background-color: #FFF6E9; 
   color: #FFF6E9;
   position: relative;
 }
-
 .navbar {
   background-color: #FFF6E9;
   backdrop-filter: blur(8px);
@@ -60,8 +51,6 @@ body {
   position: relative;
   z-index: 1000000;
 }
-
-/* FIXED: Logo link styles to prevent large border box on click/hover */
 .navbar .logo a,
 .navbar .logo a:focus,
 .navbar .logo a:hover,
@@ -74,8 +63,6 @@ body {
   margin: 0 !important;
   cursor: pointer;
 }
-
-/* Logo image size lock */
 .logo img {
   height: 40px;
   width: auto;
@@ -84,19 +71,16 @@ body {
   margin: 0;
   padding: 0;
 }
-
 .navbar .logo a {
   color: #ffffff;
   text-decoration: none;
   font-weight: bold;
   font-size: 20px;
 }
-
 .navbar .nav-links {
   display: flex;
   gap: 10px;
 }
-
 .navbar .nav-links a {
   color: #031E44;
   text-decoration: none;
@@ -106,19 +90,16 @@ body {
   transition: background 0.25s, border 0.25s;
   font-size: clamp(1rem, 2vw, 1.125rem);
 }
-
 .navbar a:hover {
   border: 2px solid #031E44;
   border-radius: 4px;
   padding: 10px 15px;
 }
-
 .hamburger {
   display: none;
   flex-direction: column;
   cursor: pointer;
 }
-
 .hamburger div {
   width: 15px;
   height: 1px;
@@ -127,8 +108,6 @@ body {
   transition: all 0.3s ease;
   transform-origin: center;
 }
-
-/* Responsive layout for smaller screens */
 @media (max-width: 600px) {
   .navbar .nav-links {
     position: fixed;
@@ -143,31 +122,24 @@ body {
     transition: left 0.3s ease;
     z-index: 11000;
   }
-
   .navbar .nav-links.active {
     left: 0;
   }
-
   .navbar .nav-links a {
     font-size: 24px;
     padding: 15px;
     color: #FFF6E9;
   }
-
   .hamburger {
     display: flex;
     z-index: 1101;
   }
-
-  /* Logo size + reset hover/focus behavior inside media query */
   .navbar img {
     height: 40px;
     width: auto;
     display: block;
     border: none;
   }
-
-  /* Remove outline/border on logo links when clicked or hovered */
   .navbar a:focus,
   .navbar a:active,
   .navbar a:hover {
@@ -177,48 +149,35 @@ body {
     background: none;
   }
 }
-
-/* Hamburger active (X) state */
 .hamburger.open div:nth-child(1) {
   transform: rotate(45deg) translate(3.5px, 3.5px);
 }
-
 .hamburger.open div:nth-child(2) {
   opacity: 0;
 }
-
 .hamburger.open div:nth-child(3) {
   transform: rotate(-45deg) translate(3.5px, -3.5px);
 }
-
-
 .hero {
   padding: 60px 20px;
   text-align: center;
   height: 100vh;
   background-color: #031E44;
 }
-
-
 .hero-text h1 {
   font-size: 40px;
   margin-bottom: 10px;
 }
-
-
-/* Text container inside hero */
 .hero-text p {
   font-size: 22px;
   margin-bottom: 30px;
 }
-
 .mode-icons {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   gap: 40px;
 }
-
 .mode {
   display: flex;
   flex-direction: column;
@@ -226,12 +185,9 @@ body {
   cursor: pointer;
   transition: transform 0.2s ease;
 }
-
 .mode:hover {
   transform: scale(1.05);
 }
-
-
 .mode p {
   font-weight: bold;
   font-size: 16px;
@@ -239,26 +195,22 @@ body {
   color:#2C3E50;
   text-align: centre;
 }
-/* New wrapper for icon + text */
 .icon-box {
-  border: 3px solid #FFF6E9;   /* white border */
+  border: 3px solid #FFF6E9;   
   border-radius: 8px;
-  padding: 15px 10px 10px 10px; /* more padding top and sides, less bottom */
-  background-color: #FFF6E9;    /* white background inside border */
-  width: 120px;                 /* fix width */
+  padding: 15px 10px 10px 10px; 
+  background-color: #FFF6E9;   
+  width: 120px;                 
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
   align-items: center;
-  cursor: pointer; /* optional, if you want the box clickable */
+  cursor: pointer; 
   transition: transform 0.2s ease;
 }
-
 .icon-box:hover {
   transform: scale(1.05);
 }
-
-/* Remove border & padding from image */
 .icon-box img {
   width: 120px;
   height: 120px;
@@ -266,10 +218,8 @@ body {
   margin-bottom: 10px;
   border: none;
   padding: 0;
-  border-radius: 6px; /* optional slight rounding of image corners */
+  border-radius: 6px; 
 }
-
-/* Style the label inside the box */
 .icon-box p {
   font-weight: bold;
   font-size: 16px;
@@ -277,7 +227,6 @@ body {
   color: #2C3E50;
   text-align: center;
 }
-
 .start-button {
   margin-top: 40px;
   background-color: #F44336;
@@ -290,135 +239,160 @@ body {
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.15);
   transition: background-color 0.3s ease;
-  margin-bottom: 30px; /* adds spacing from the icons */
+  margin-bottom: 30px; 
 }
-
 .start-button:hover {
   background-color:#F44336;
    transform: scale(1.05);
 }
-
-/* Fix icon container spacing */
 .hero-text {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-
-
-/* General section styles */
 section {
   padding: 30px 0;
   color: #FFF6E9;
 }
-
 section .container {
   max-width: 900px;
   margin: 0 auto;
   padding: 0 20px;
   text-align: left;
 }
-
-/* Individual section background colors */
 #diy_bar {
-  background-color: #031E44; /* purple */
+  background-color: #031E44; 
   height: 100vh;
 }
-
 #about {
   background-color: #031E44;
   min-height: 100vh;
 }
-
-#contact {
-  min-height: 100vh;
-  background-color: #031E44;
-  color: FFF9F0;
-  padding: 60px 20px;
-  text-align: center;
-  padding-bottom: 80px;
-}
-
-/* Responsive adjustments */
 @media (max-width: 600px) {
   section {
     padding: 20px 10px;
   }
-
   section .container {
     max-width: 90vw;
     padding: 0 10px;
   }
-
   .hero {
     height: auto;
     padding: 40px 20px;
   }
-
   .hero-text {
     max-width: 90vw;
     font-size: 16px;
     padding: 0 10px;
   }
-
   h1 {
     font-size: 24px;
   }
 }
-
 h1 {
   font-size: clamp(2rem, 5vw, 3rem);
   margin-bottom: 0.5rem;
 }
 .site-footer {
-  background-color: #031E44; /* dark blue background like navbar */
+  background-color: #031E44; 
   padding: 15px 0;
   text-align: center;
   position: relative;
 }
-
 .footer-links a {
-  color: #FFF6E9; /* light color like navbar text */
+  color: #FFF6E9; 
   margin: 0 15px;
   text-decoration: none;
   font-weight: bold;
   font-size: 1rem;
   transition: color 0.3s ease;
 }
-
 .footer-links a:hover {
-  color: #F7A072; /* a nice highlight color on hover */
+  color: #F7A072; 
   text-decoration: underline;
 }
-
-
-
+#contact {
+  background-image: url('Contact_Us_Background.png'); 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  padding: 60px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #FFF6E9; 
+  position: relative;
+}
+#contact h1 {
+  width: 100%;
+  text-align: left;
+  align-self: flex-start;  
+}
+#contact::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('Contact_Us_Background.png'); 
+  background-size: cover;
+  background-position: center;
+  filter: blur(8px);
+  z-index: 0;
+  transform: scale(1.05); 
+}
+.contact-form,
+#contact p,
+#contact label,
+#contact input,
+#contact textarea,
+#contact button {
+  position: relative;
+  z-index: 1;
+}
+#contact p {
+  align-self: flex-start;  
+}
+.contact-form {
+  background: transparent;
+  padding: 30px;
+  border-radius: 10px;
+  color: #FFF6E9;
+  max-width: 600px;
+  width: 100%;
+}
 #contact h1 {
   font-size: 40px;
+  font-family:'Georgia', serif;
   margin-bottom: 10px;
-  text-align: left;
+  text-align: left; 
+  z-index: 1;
 }
-
 #contact p {
   font-size: 22px;
+  font-family:'Georgia', serif;
   margin-bottom: 30px;
   text-align: left;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 1);
 }
-
 .contact-form {
   width: 100%;
-  max-width: none;         /* ensure no limit */
-  padding: 0 5vw;          /* 5% padding on each side */
-  box-sizing: border-box;  /* ensure padding doesn't shrink the content */
+  max-width: none;         
+  padding-left: 0;
+  padding-right: 5vw;         
+  box-sizing: border-box;  
   display: flex;
   flex-direction: column;
   gap: 15px;
   margin-bottom: 80px;
+  align-items: flex-start;
 }
-
 .contact-form input,
 .contact-form textarea {
   width: 100%;
+  font-family:'Georgia', serif;
   padding: 12px 15px;
   box-sizing: border-box;
   border-radius: 8px;
@@ -426,22 +400,19 @@ h1 {
   background-color: #1f3f67;
   color: #FFF6E9;
   font-size: 16px;
-  margin-bottom: 20px; /* space between fields */
-  resize: vertical; /* for textarea */
+  margin-bottom: 20px; 
+  resize: vertical; 
 }
-
 .contact-form input::placeholder,
 .contact-form textarea::placeholder {
   color: #b0c4de;
 }
 textarea {
-  max-height: 500px;  /* or any suitable max height */
-  overflow-y: auto;   /* adds a scrollbar inside the textarea when content exceeds max height */
+  max-height: 500px;  
+  overflow-y: auto;   
   width: 100%;
   box-sizing: border-box;
 }
-
-
 .contact-form button {
   background-color: #2D3F5B;
   width: 100%;
@@ -453,27 +424,25 @@ textarea {
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
-
+#contact h1, 
+#contact p, 
+.contact-form label {
+  color: #FFF6E9; 
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 1);
+}
 .contact-form button:hover {
   background-color: #1b2d4d;
 }
 .contact-form label {
   display: block;
   text-align: left;
-  margin-bottom: 6px; /* small space between label and input */
+  margin-bottom: 6px; 
   font-weight: 600;
-  color: #FFF6E9; /* or whatever color fits your design */
-}
-.top-right-photo {
-  float: right;
-  width: 150px;
-  height: auto;
-  margin: 0 0 15px 15px; /* margin top right bottom left */
+  color: #FFF6E9; 
 }
 textarea {
   scroll-behavior: smooth;
 }
-/* Popup styles */
 .popup {
   position: fixed;
   top: 0;
@@ -486,7 +455,6 @@ textarea {
   justify-content: center;
   z-index: 9999;
 }
-
 .popup-content {
   background: white;
   padding: 2em;
@@ -496,7 +464,6 @@ textarea {
   width: 90%;
   max-width: 400px;
 }
-
 .close-btn {
   position: absolute;
   top: 0.5em;
@@ -504,43 +471,57 @@ textarea {
   font-size: 1.5em;
   cursor: pointer;
 }
-
 .hidden {
   display: none;
 }
 #FAQ {
+  position: relative;
   min-height: 100vh;
-  background-color: #031E44;
-  color: #FFF6E9;
   padding: 60px 20px 100px;
-  text-align: center;
+  color: #FFF6E9;
+  text-align: left;
+  overflow: hidden;
 }
 
+#FAQ::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('FAQ_Background.png');
+  background-size: cover;
+  background-position: center;
+  filter: blur(8px);
+  transform: scale(1.05); 
+  z-index: 0;
+}
+#FAQ h1,
+#FAQ h2,
+#FAQ p {
+  position: relative;
+  z-index: 1;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7); 
+}
 #FAQ h1 {
   font-size: 48px;
   margin-bottom: 40px;
-  text-align: center;
+  font-family: 'Georgia', serif;
   font-weight: 700;
-
-  display: inline-block;
   padding-bottom: 10px;
 }
-
 #FAQ h2 {
   font-size: 32px;
   margin-top: 40px;
-  text-align: left;
-  color: #FFF6E9;
+  font-family: 'Georgia', serif;
 }
-
 #FAQ p {
   font-size: 20px;
   line-height: 1.6;
   margin: 10px 0 30px;
   text-align: left;
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
+  font-family: 'Georgia', serif';
 }
 .about-section {
   position: relative;
@@ -549,8 +530,6 @@ textarea {
   text-align: left;
   overflow: hidden;
 }
-
-/* Add blurred background image as a pseudo-element */
 .about-section::before {
   content: "";
   position: absolute;
@@ -563,20 +542,17 @@ textarea {
   filter: blur(4px);
   z-index: 0;
 }
-
-/* Ensure all content sits above the blurred background */
 .about-section > * {
   position: relative;
   z-index: 1;
 }
-
 .about-heading-line {
   width: 95%;
   height: 2px;
   background-color: #F5EBDC;
-  margin: 10px 20px 30px 20px; /* top, right, bottom, left */
+  margin: 10px 20px 30px 20px;
+  z-index: 1;
 }
-
 .about-section h1,
 .about-section h2,
 .ethos-heading {
@@ -586,7 +562,6 @@ textarea {
   overflow: hidden;
   text-overflow: ellipsis;
 }
-
 .about-section p,
 .ethos-content p {
   font-size: 22px;
@@ -595,51 +570,41 @@ textarea {
   overflow: hidden;
   text-overflow: ellipsis;
 }
-
-/* Make about-content a flex container with horizontal alignment */
 .about-content {
   display: flex;
   flex-direction: row;
   gap: 20px;
   max-width: 1000px;
   margin: 0 auto 40px;
-  align-items: center; /* Vertically center text and photo */
-  /* Removed white-space: nowrap to allow wrapping on smaller screens */
+  align-items: center; 
   flex-wrap: wrap;
 }
-
 .about-photo-container {
   display: flex;
   justify-content: center;
   position: relative;
   z-index: 2;
-  /* Removed negative margin; added margin bottom for spacing */
   margin-bottom: 40px;
-  flex-shrink: 0; /* prevent shrinking on flex wrap */
+  flex-shrink: 0; 
 }
-
 .about-photo {
   width: 250px;
   height: 250px;
   object-fit: cover;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
   border-radius: 8px;
-  /* Removed padding-top to avoid unexpected spacing */
 }
-
-/* Ethos content styling */
 .ethos-content {
   margin: 0 auto;
   text-align: left;
-  flex: 1 1 300px; /* allow it to grow/shrink with minimum width */
+  padding-right: 10px;
+  flex: 1 1 300px; 
 }
-
 .ethos-heading {
   margin-top: 20px;
   margin-bottom: 20px;
   white-space: nowrap;
 }
-
 .ethos-images {
   display: flex;
   justify-content: center;
@@ -647,38 +612,33 @@ textarea {
   margin-top: 20px;
   flex-wrap: wrap;
 }
-
 .ethos-images img {
   max-width: 200px;
   height: auto;
   border: 2px solid #F5EBDC;
 }
-
-/* Responsive adjustments for smaller screens */
 @media (max-width: 768px) {
   .about-section h1,
   .about-section h2,
   .ethos-heading {
     font-size: 30px;
     padding-left: 10px;
+    padding-right: 10px;
   }
-
   .about-section p,
   .ethos-content p {
     font-size: 18px;
     padding-left: 10px;
+    padding-right: 10px;
   }
-
   .about-photo {
     width: 200px;
     height: 200px;
   }
-
   .about-content {
     flex-direction: column;
     align-items: center;
   }
-
   .about-photo-container {
     margin-bottom: 20px;
   }
